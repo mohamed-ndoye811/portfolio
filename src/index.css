@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+	font-family: "General Sans", sans-serif;
+	background-color: #222831;
+	color: #eeeeee;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+header {
+	height: 75px;
+	width: 100%;
+	display: grid;
+	place-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+header ul {
+	list-style: none;
+	display: flex;
+	column-gap: 2rem;
+}
+
+.navLink {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navLink.active {
+	text-decoration: underline;
+}
+
+main {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-content: center;
+	font-size: 3rem;
+	font-weight: 700;
+}
