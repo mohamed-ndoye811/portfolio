@@ -1,6 +1,6 @@
+import { PageAnimationFrame } from "@mohamed_ndoye/react-fpca";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { PageAnimationFrame } from "react-fpca";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
