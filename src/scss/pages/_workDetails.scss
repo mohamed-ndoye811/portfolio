@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+main#work-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 1.75rem;
+
+	.thumbnail {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background-color: rgba($color: $clr-sec, $alpha: 0.5);
+	}
+
+	.text-content {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.5rem;
+	}
+
+	.tech-stack {
+		display: flex;
+		column-gap: 1rem;
+	}
+}

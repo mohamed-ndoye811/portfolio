@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.study {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+
+	.year {
+		font-size: 24px;
+		font-weight: 900;
+		background: $clr-gradient;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-variation-settings: "MIXD" 200, "wdth" 100;
+		font-feature-settings: "ss02" on, "ss01" on;
+	}
+
+	.title {
+		font-weight: 500;
+		font-size: 0.625rem;
+		width: 60%;
+	}
+}
