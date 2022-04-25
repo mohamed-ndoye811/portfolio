@@ -5,7 +5,6 @@ export default function Header() {
 	const [displayMenu, setDisplayMenu] = useState(false);
 
 	function toggleMenu() {
-		console.log(displayMenu);
 		setDisplayMenu(!displayMenu);
 	}
 
