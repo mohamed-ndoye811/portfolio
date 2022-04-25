@@ -1,0 +1,13 @@
+header {
+	width: 100%;
+	grid-area: header;
+	padding-block: 1rem;
+	display: grid;
+	place-content: center;
+	z-index: 99;
+
+	.logo {
+		aspect-ratio: 1;
+		width: 2rem;
+	}
+}
