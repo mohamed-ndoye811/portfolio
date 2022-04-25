@@ -1,7 +1,39 @@
+import { usePageAnimations } from "@mohamed_ndoye/react-fpca";
+import gsap, { Power4 } from "gsap";
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
 export default function Home() {
+	gsap.defaults({
+		stagger: 0.05,
+		duration: 1.2,
+	});
+
+	function enterAnimation() {
+		return gsap.fromTo(
+			".text-content section > *",
+			{
+				y: 75,
+				opacity: 0,
+			},
+			{
+				y: 0,
+				opacity: 1,
+				ease: Power4.easeOut,
+			}
+		);
+	}
+
+	function leaveAnimation() {
+		return gsap.to(".text-content section > *", {
+			y: -75,
+			opacity: 0,
+			ease: Power4.easeInOut,
+		});
+	}
+
+	usePageAnimations(enterAnimation, leaveAnimation);
+
 	return (
 		<main id='home'>
 			<div className='text-content'>

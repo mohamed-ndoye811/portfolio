@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mohamed_ndoye/react-fpca": "^0.0.2",
+    "@mohamed_ndoye/react-fpca": "^0.0.3",
     "gsap": "^3.10.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

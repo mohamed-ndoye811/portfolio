@@ -275,10 +275,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mohamed_ndoye/react-fpca@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@mohamed_ndoye/react-fpca/-/react-fpca-0.0.2.tgz#2a55df7830c93f1984dfbf26d4f64775a12db897"
-  integrity sha512-GLA3qc4hTgbwISAu3DGJQOsdGxSx0UIIEGguEUhyyJ/rOUYBvQkWpce/p3U5TKH0Qd9hCYb02syQ7SODZpedrA==
+"@mohamed_ndoye/react-fpca@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@mohamed_ndoye/react-fpca/-/react-fpca-0.0.3.tgz#50fa877c04eca640c84a6263e7163dfbcfd79522"
+  integrity sha512-MrHHBkTesiS3aecMIg4oyFu0RbcjpdyZ64UBGePVbdfKD7IqJe9irSZOBAeKXAfW0PYVVI8d2kM4weVuCImszQ==
   dependencies:
     npm "^8.7.0"
     react-router-dom "^6.3.0"

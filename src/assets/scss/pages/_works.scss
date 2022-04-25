@@ -16,6 +16,10 @@ main#works {
 			transition: font-variation-settings 0.3s ease;
 			user-select: none;
 
+			/* Animation initial state */
+			opacity: 0;
+			transform: translateY(75);
+
 			&:hover,
 			&:focus {
 				font-variation-settings: "MIXD" 200, "wdth" 125;

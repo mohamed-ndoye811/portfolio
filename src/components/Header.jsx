@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Menu from "../containers/Menu";
+import useGetDevice from "../hooks/useGetDevice";
 
 export default function Header() {
 	const [displayMenu, setDisplayMenu] = useState(false);
@@ -15,7 +16,10 @@ export default function Header() {
 					<img src='./src/assets/imgs/logo.svg' alt='' />
 				</div>
 			</header>
-			<Menu display={displayMenu} toggle={toggleMenu} />
+
+			{useGetDevice() != "desktop" && (
+				<Menu display={displayMenu} toggle={toggleMenu} />
+			)}
 		</>
 	);
 }

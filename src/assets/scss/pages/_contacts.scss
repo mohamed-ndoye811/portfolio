@@ -6,4 +6,10 @@ main#contacts {
 	justify-content: center;
 	align-items: center;
 	row-gap: 1rem;
+
+	/* Animation initial state */
+	* {
+		opacity: 0;
+		transform: translateY(75);
+	}
 }

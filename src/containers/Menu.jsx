@@ -1,3 +1,4 @@
+import { NavigationLink } from "@mohamed_ndoye/react-fpca";
 import gsap, { Power4 } from "gsap";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -5,7 +6,6 @@ import { Icon } from "../components";
 
 export default function Menu({ display, toggle }) {
 	useEffect(() => {
-		console.log(display);
 		if (display) {
 			gsap.to(".menu", {
 				"clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -15,12 +15,13 @@ export default function Menu({ display, toggle }) {
 
 			gsap.fromTo(
 				"li",
-				{ y: 75, opacity: 0 },
+				{ y: 75, opacity: 0, skewY: 10 },
 				{
 					y: 0,
 					opacity: 1,
 					stagger: 0.1,
 					ease: Power4.easeOut,
+					skewY: 0,
 					duration: 1.2,
 					delay: 0.5,
 				}
@@ -40,19 +41,19 @@ export default function Menu({ display, toggle }) {
 			<nav>
 				<ul>
 					<li>
-						<Link to='/' className='navLink' onClick={toggle}>
+						<NavigationLink to='/' className='navLink' click={toggle}>
 							Home
-						</Link>
+						</NavigationLink>
 					</li>
 					<li>
-						<Link to='/works' className='navLink' onClick={toggle}>
+						<NavigationLink to='/works' className='navLink' click={toggle}>
 							Works
-						</Link>
+						</NavigationLink>
 					</li>
 					<li>
-						<Link to='/contacts' className='navLink' onClick={toggle}>
+						<NavigationLink to='/contacts' className='navLink' click={toggle}>
 							Contacts
-						</Link>
+						</NavigationLink>
 					</li>
 					<li className='socials'>
 						<Icon name='h' />

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { PageAnimationFrame } from "@mohamed_ndoye/react-fpca";
 
-import "./scss/index.scss";
+import "./assets/scss/index.scss";
 
 import { App } from "./App";
 
