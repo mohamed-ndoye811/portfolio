@@ -7,7 +7,7 @@ export default function Works() {
 		duration: 1.2,
 	});
 	function enterAnimation() {
-		let animation = gsap.timeline({ ease: Power4.easeOut });
+		let animation = gsap.timeline();
 
 		return animation
 			.fromTo(
@@ -21,6 +21,7 @@ export default function Works() {
 					opacity: 1,
 					stagger: 0.1,
 					duration: 1.2,
+					ease: Power4.easeOut,
 				}
 			)
 			.to(

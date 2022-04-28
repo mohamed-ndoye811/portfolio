@@ -9,8 +9,13 @@ header {
 	z-index: 99;
 
 	.logo {
+		display: block;
 		aspect-ratio: 1;
 		width: 3rem;
+	}
+
+	nav {
+		display: none;
 	}
 
 	@include desktop {
@@ -22,6 +27,7 @@ header {
 		}
 
 		nav {
+			display: initial;
 			ul {
 				display: flex;
 				column-gap: 3.5rem;
