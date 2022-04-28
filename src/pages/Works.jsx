@@ -1,5 +1,6 @@
 import { NavigationLink, usePageAnimations } from "@mohamed_ndoye/react-fpca";
 import gsap, { Power4 } from "gsap";
+import React from "react";
 
 export default function Works() {
 	gsap.defaults({

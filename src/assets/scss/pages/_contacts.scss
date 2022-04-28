@@ -8,7 +8,7 @@ main#contacts {
 		text-align: center;
 		display: flex;
 		flex-direction: column;
-		row-gap: 2rem;
+		row-gap: 1.5rem;
 
 		@include desktop {
 			display: grid;
@@ -16,8 +16,24 @@ main#contacts {
 			max-width: 50rem;
 		}
 
+		.socials {
+			display: flex;
+			width: fit-content;
+			margin: 0 auto;
+			column-gap: 1.5rem;
+
+			.social {
+				transform: translateY(4.6875rem);
+				opacity: 0;
+
+				.icon {
+					width: 1rem;
+				}
+			}
+		}
+
 		/* Animation initial state */
-		* {
+		> *:not(.socials) {
 			opacity: 0;
 			transform: translateY(4.6875rem);
 		}

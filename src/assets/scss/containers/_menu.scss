@@ -24,6 +24,14 @@
 
 	.socials {
 		display: flex;
-		column-gap: 1rem;
+		column-gap: 2rem;
+		margin-top: 1rem;
+
+		.icon {
+			width: 1rem;
+			svg {
+				fill: $clr-pri;
+			}
+		}
 	}
 }

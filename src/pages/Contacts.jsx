@@ -2,6 +2,8 @@ import gsap, { Power4 } from "gsap";
 import React from "react";
 
 import { usePageAnimations } from "@mohamed_ndoye/react-fpca";
+import { Icon } from "../components";
+import { socials } from "../data/socials";
 
 export default function Contacts() {
 	gsap.defaults({
@@ -10,26 +12,41 @@ export default function Contacts() {
 	});
 
 	function enterAnimation() {
-		return gsap.fromTo(
-			"#contacts .text-content > *",
-			{
-				y: 75,
-				opacity: 0,
-			},
-			{
+		return gsap
+			.timeline()
+			.to("#contacts .text-content > *:not(.socials)", {
 				y: 0,
 				opacity: 1,
 				ease: Power4.easeOut,
-			}
-		);
+			})
+			.to(
+				"#contacts .text-content .socials .social",
+				{
+					y: 0,
+					opacity: 1,
+					ease: Power4.easeOut,
+				},
+				"<"
+			);
 	}
 
 	function leaveAnimation() {
-		return gsap.to("#contacts .text-content > *", {
-			y: -75,
-			opacity: 0,
-			ease: Power4.easeInOut,
-		});
+		return gsap
+			.timeline()
+			.to("#contacts .text-content > *:not(.socials)", {
+				y: -75,
+				opacity: 0,
+				ease: Power4.easeInOut,
+			})
+			.to(
+				"#contacts .text-content .socials .social",
+				{
+					y: -75,
+					opacity: 0,
+					ease: Power4.easeInOut,
+				},
+				"<"
+			);
 	}
 
 	usePageAnimations(enterAnimation, leaveAnimation);
@@ -44,7 +61,20 @@ export default function Contacts() {
 					more of my works have a look on my gihub. And if you want to work
 					contact me on one of my socials. See ya!
 				</p>
-				<div className='socials'></div>
+				<div className='socials'>
+					{socials.map((social, index) => {
+						return (
+							<a
+								href={social.link}
+								target='_blank'
+								rel='noopener noreferrer'
+								className='social'
+								key={index}>
+								<Icon name={social.name} />
+							</a>
+						);
+					})}
+				</div>
 			</div>
 		</main>
 	);

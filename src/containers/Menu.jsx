@@ -3,6 +3,7 @@ import gsap, { Power4 } from "gsap";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../components";
+import { socials } from "../data/socials";
 
 export default function Menu({ display, toggle }) {
 	useEffect(() => {
@@ -56,10 +57,18 @@ export default function Menu({ display, toggle }) {
 						</NavigationLink>
 					</li>
 					<li className='socials'>
-						<Icon name='h' />
-						<Icon name='h' />
-						<Icon name='h' />
-						<Icon name='h' />
+						{socials.map((social, index) => {
+							return (
+								<a
+									href={social.link}
+									target='_blank'
+									rel='noopener noreferrer'
+									className='social'
+									key={index}>
+									<Icon name={social.name} />
+								</a>
+							);
+						})}
 					</li>
 				</ul>
 			</nav>
