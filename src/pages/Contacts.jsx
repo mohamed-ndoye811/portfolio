@@ -11,7 +11,7 @@ export default function Contacts() {
 
 	function enterAnimation() {
 		return gsap.fromTo(
-			"#contacts > *",
+			"#contacts .text-content > *",
 			{
 				y: 75,
 				opacity: 0,
@@ -25,7 +25,7 @@ export default function Contacts() {
 	}
 
 	function leaveAnimation() {
-		return gsap.to("#contacts > *", {
+		return gsap.to("#contacts .text-content > *", {
 			y: -75,
 			opacity: 0,
 			ease: Power4.easeInOut,
@@ -36,14 +36,16 @@ export default function Contacts() {
 
 	return (
 		<main id='contacts'>
-			<h2 className='wide'>chat with me!</h2>
-			<p>
-				You either made it to the end of the website, or just want to contact.
-				Hopefully you enjoyed (or will enjoy) the webite, if you want to see
-				more of my works have a look on my gihub. And if you want to work
-				contact me on one of my socials. See ya!
-			</p>
-			<div className='socials'></div>
+			<div className='text-content'>
+				<h2 className='wide'>chat with me!</h2>
+				<p>
+					You either made it to the end of the website, or just want to contact.
+					Hopefully you enjoyed (or will enjoy) the webite, if you want to see
+					more of my works have a look on my gihub. And if you want to work
+					contact me on one of my socials. See ya!
+				</p>
+				<div className='socials'></div>
+			</div>
 		</main>
 	);
 }

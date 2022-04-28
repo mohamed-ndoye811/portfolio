@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 main#home {
 	h2 {
 		margin-bottom: 1rem;
@@ -6,6 +8,16 @@ main#home {
 	/* Animation initial state */
 	section > * {
 		opacity: 0;
-		transform: translateY(75);
+		transform: translateY(75px);
+	}
+
+	@include desktop {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr max(30rem);
+
+		.text-content {
+			grid-column: 2/-1;
+		}
 	}
 }

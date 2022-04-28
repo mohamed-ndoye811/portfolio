@@ -1,7 +1,13 @@
+@use "../abstracts/" as *;
+
 footer {
 	width: 100%;
 	grid-area: footer;
 	height: 4rem;
 	display: grid;
 	place-content: center;
+
+	@include desktop {
+		height: 100%;
+	}
 }

@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+@include desktop {
+	#app {
+		display: grid;
+		grid-template-areas: "header" "content" "footer";
+		grid-template-rows: max(8rem) 1fr max(8rem);
+		height: 100%;
+		max-width: 73.75rem;
+		margin: 0 auto;
+
+		main {
+			padding-inline: 0;
+			max-width: 1180px;
+			overflow: initial;
+		}
+	}
+}

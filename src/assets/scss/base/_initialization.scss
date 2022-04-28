@@ -36,20 +36,6 @@ img {
 	object-fit: cover;
 }
 
-main {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	padding-inline: $container-padding;
-	grid-area: content;
-}
-
-section {
-	&:not(:last-of-type) {
-		margin-bottom: 32px;
-	}
-}
-
 ul {
 	list-style-type: none;
 	padding: 0;
@@ -59,4 +45,20 @@ ul {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+.navLink {
+	font-size: 1.75rem;
+	font-weight: 900;
+	letter-spacing: 0.045rem;
+	text-transform: uppercase;
+	font-variation-settings: "MIXD" 125, "wdth" 100;
+	font-feature-settings: "ss02" on, "ss01" on;
+	transition: font-variation-settings 0.3s ease;
+	user-select: none;
+
+	&:hover,
+	&:focus {
+		font-variation-settings: "MIXD" 200, "wdth" 100;
+	}
 }

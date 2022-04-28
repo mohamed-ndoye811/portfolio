@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 main#works {
 	.clients-list {
 		display: flex;
@@ -18,12 +20,39 @@ main#works {
 
 			/* Animation initial state */
 			opacity: 0;
-			transform: translateY(75);
+			transform: translateY(75px);
 
 			&:hover,
 			&:focus {
 				font-variation-settings: "MIXD" 200, "wdth" 125;
 			}
+		}
+	}
+
+	.thumbnail {
+		display: none;
+	}
+
+	@include desktop {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 4rem;
+
+		.clients-list {
+			align-items: flex-start;
+			width: fit-content;
+		}
+
+		.thumbnail {
+			display: block;
+			aspect-ratio: 16/9;
+			height: auto;
+			width: 40rem;
+			background-color: $clr-act;
+
+			/* Animation initial state */
+			clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 		}
 	}
 }

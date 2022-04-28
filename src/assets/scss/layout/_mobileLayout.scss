@@ -1,6 +1,22 @@
+@use "../abstracts/" as *;
+
 #app {
 	display: grid;
 	grid-template-areas: "header" "content" "footer";
 	grid-template-rows: auto 1fr auto;
 	height: 100%;
+
+	main {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		padding-inline: $container-padding;
+		grid-area: content;
+	}
+
+	section {
+		&:not(:last-of-type) {
+			margin-bottom: 32px;
+		}
+	}
 }

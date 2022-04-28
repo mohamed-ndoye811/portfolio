@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 header {
 	width: 100%;
 	grid-area: header;
@@ -9,5 +11,34 @@ header {
 	.logo {
 		aspect-ratio: 1;
 		width: 3rem;
+	}
+
+	@include desktop {
+		height: 100%;
+		place-content: center end;
+
+		.logo {
+			display: none;
+		}
+
+		nav {
+			ul {
+				display: flex;
+				column-gap: 3.5rem;
+
+				.navLink {
+					font-size: 1rem;
+					font-weight: 650;
+					letter-spacing: 0.045rem;
+					font-variation-settings: "MIXD" 100, "wdth" 100;
+					text-align: center;
+
+					&:hover,
+					&:focus {
+						font-variation-settings: "MIXD" 150, "wdth" 100;
+					}
+				}
+			}
+		}
 	}
 }

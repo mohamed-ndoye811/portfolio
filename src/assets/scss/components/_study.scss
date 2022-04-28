@@ -15,11 +15,22 @@
 		-webkit-text-fill-color: transparent;
 		font-variation-settings: "MIXD" 200, "wdth" 100;
 		font-feature-settings: "ss02" on, "ss01" on;
+
+		@include desktop {
+			font-size: 2rem;
+		}
 	}
 
 	.title {
 		font-weight: 500;
 		font-size: 0.625rem;
-		width: 60%;
+		max-width: 60%;
+		width: fit-content;
+
+		@include desktop {
+			font-size: 0.875rem;
+			max-width: 70%;
+			font-weight: 400;
+		}
 	}
 }

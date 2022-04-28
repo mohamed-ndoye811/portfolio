@@ -4,43 +4,48 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-size: 1rem;
 
 	.title {
-		font-size: 1.125rem;
 		font-weight: 800;
 		font-variation-settings: "MIXD" 200, "wdth" 100;
 		text-transform: uppercase;
 	}
 
-	.progress {
-		display: flex;
-		align-items: center;
-		column-gap: 16px;
-		.bar {
-			height: 2px;
-			width: 96px;
-			background-color: $clr-sec;
-			position: relative;
+	.bar {
+		height: 2px;
+		width: 96px;
+		background-color: $clr-sec;
+		position: relative;
 
-			span {
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				display: block;
-				height: 8px;
-				background: -webkit-linear-gradient(
-					15deg,
-					#bea7e5 0%,
-					#2dbcea 82.61%,
-					#18f0c7 149.36%
-				);
-			}
+		span {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			display: block;
+			height: 8px;
+			background: -webkit-linear-gradient(
+				15deg,
+				#bea7e5 0%,
+				#2dbcea 82.61%,
+				#18f0c7 149.36%
+			);
 		}
 
-		.value {
-			font-weight: 500;
-			font-variation-settings: "MIXD" 200, "wdth" 100;
+		@include desktop {
+			width: 100%;
+			max-width: 15.875rem;
+		}
+	}
+
+	.value {
+		font-weight: 500;
+		font-variation-settings: "MIXD" 200, "wdth" 100;
+
+		@include desktop {
+			font-weight: 900;
+			font-variation-settings: "MIXD" 200, "wdth" 200;
 		}
 	}
 }
