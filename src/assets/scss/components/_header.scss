@@ -12,6 +12,11 @@ header {
 		display: block;
 		aspect-ratio: 1;
 		width: 2rem;
+
+		/* ---- Tablet ---- */
+		@include tablet {
+			width: 3rem;
+		}
 	}
 
 	nav {

@@ -14,4 +14,9 @@
 			fill: $clr-act;
 		}
 	}
+
+	/* ---- Tablet ---- */
+	@include tablet {
+		width: 2rem;
+	}
 }

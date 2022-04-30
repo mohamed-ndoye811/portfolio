@@ -52,3 +52,22 @@ p {
 		font-variation-settings: "MIXD" 200, "wdth" 100;
 	}
 }
+
+/* ---- Tablet ---- */
+@include tablet {
+	h2 {
+		font-size: 2.5rem;
+
+		&.wide {
+			font-size: 2rem;
+		}
+	}
+
+	p {
+		font-size: 0.875rem;
+	}
+
+	.navLink {
+		font-size: 2.5rem;
+	}
+}

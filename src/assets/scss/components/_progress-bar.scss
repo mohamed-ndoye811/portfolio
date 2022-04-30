@@ -49,4 +49,25 @@
 			font-variation-settings: "MIXD" 200, "wdth" 200;
 		}
 	}
+
+	/* ---- Tablet ---- */
+	@include tablet {
+		.title {
+			font-size: 1.75rem;
+		}
+
+		.bar {
+			height: 2px;
+			width: 100%;
+			max-width: 15.875rem;
+
+			span {
+				height: 8px;
+			}
+		}
+
+		.value {
+			font-size: 1.5rem;
+		}
+	}
 }
