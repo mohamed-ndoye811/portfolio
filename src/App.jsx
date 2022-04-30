@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -11,9 +11,14 @@ export function App() {
 		<>
 			<Header></Header>
 			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/works' element={<Works />} />
-				<Route path='/contacts' element={<Contacts />} />
+				<Route path='/'>
+					<Route index element={<Home />} />
+					<Route path='works'>
+						<Route index element={<Works />}></Route>
+						<Route path=':slug' element={<WorksDetails />} />
+					</Route>
+					<Route path='contacts' element={<Contacts />} />
+				</Route>
 			</Routes>
 			<Footer></Footer>
 		</>

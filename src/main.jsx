@@ -8,11 +8,9 @@ import "./assets/scss/index.scss";
 import { App } from "./App";
 
 ReactDOM.createRoot(document.getElementById("app")).render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<PageAnimationFrame>
-				<App />
-			</PageAnimationFrame>
-		</BrowserRouter>
-	</React.StrictMode>
+	<BrowserRouter>
+		<PageAnimationFrame>
+			<App />
+		</PageAnimationFrame>
+	</BrowserRouter>
 );

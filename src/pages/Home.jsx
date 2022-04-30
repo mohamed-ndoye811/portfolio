@@ -37,7 +37,7 @@ export default function Home() {
 	return (
 		<main id='home'>
 			<div className='text-content'>
-				{/* <section>
+				<section>
 					<h2>WHO AM I?</h2>
 					<p>
 						I am currently a 21 years old passionate junior front-end web
@@ -45,7 +45,7 @@ export default function Home() {
 						very picky to be honest ) so when I’m not designing or coding i take
 						a few hours making beats (instrumentals) on FL Studio
 					</p>
-				</section> */}
+				</section>
 
 				<section>
 					<h2>MY STUDIES</h2>
@@ -58,7 +58,6 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-
 				<section>
 					<h2>TECH STACK</h2>
 					<div className='stack-list'>
