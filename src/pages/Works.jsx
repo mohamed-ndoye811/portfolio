@@ -45,6 +45,7 @@ export default function Works() {
 	}
 
 	const [clients, setClients] = useState([]);
+	const [selectedClient, setSelectedClient] = useState({})
 	const [loaded, setLoaded] = useState(false);
 
 	usePageAnimations(enterAnimation, leaveAnimation, loaded, {
@@ -72,14 +73,24 @@ export default function Works() {
 		});
 	});
 
+	function clientHover(client) {
+		setSelectedClient(client);
+	}
+
 	return (
 		<main id='works'>
 			<div className='clients-list'>
 				{clients.map((client, index) => {
-					return <Client client={client} key={index} />;
+					return (
+						<div onMouseEnter={() => {clientHover(client)}} key={index}>
+							<Client client={client} />
+						</div>
+					);
 				})}
 			</div>
-			<div className='thumbnail'></div>
+			<div className='thumbnail'>
+				<img src={selectedClient?.thumbnail?.url} alt="" />
+			</div>
 		</main>
 	);
 }

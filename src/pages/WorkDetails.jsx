@@ -9,13 +9,13 @@ export default function WorkDetails() {
 	function enterAnimation() {
 		return gsap
 			.timeline()
-			.to(".thumbnail", {
+			.to(".details .background", {
 				"clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 				duration: 1.2,
 				ease: Power4.easeOut,
-			})
+			}, "<")
 			.to(
-				[".text-content > *", ".tech-stack > *"],
+				[".details .content > p, .details .titles > *", ".tech-stack > *"],
 				{
 					y: 0,
 					opacity: 1,
@@ -23,7 +23,7 @@ export default function WorkDetails() {
 					duration: 1.2,
 					ease: Power4.easeOut,
 				},
-				"<"
+				"<.4"
 			);
 	}
 
@@ -31,13 +31,18 @@ export default function WorkDetails() {
 		let animation = gsap.timeline();
 
 		return animation
-			.to([".text-content > *", ".tech-stack > *"], {
+			.to([".details .content > p, .details .titles > *", ".tech-stack > *"], {
 				y: -75,
 				opacity: 0,
 				stagger: 0.1,
 				duration: 1.2,
 				ease: Power4.easeInOut,
 			})
+			.to(".details .background", {
+				"clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+				duration: 1.2,
+				ease: Power4.easeInOut,
+			}, "<.6")
 			.to(
 				".thumbnail",
 				{
@@ -67,7 +72,10 @@ export default function WorkDetails() {
 						client
 						id
 						slug
-						shortDesc
+						product
+						projectDescription {
+							raw
+						}
 						website
 						techs
 						thumbnail {
@@ -82,25 +90,41 @@ export default function WorkDetails() {
 		});
 	}, []);
 
-	console.log(selectedProject);
+	function displayImage() {
+		gsap.to(".thumbnail", {
+			"clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+			duration: 1.2,
+			ease: Power4.easeOut,
+		})
+	}
 
 	return (
 		<main id='work-details'>
 			<div className='thumbnail'>
-				<img src={selectedProject?.thumbnail?.url} alt='' />
+				<img src={selectedProject?.thumbnail?.url} alt='' onLoad={displayImage()} />
 			</div>
 
-			<div className='text-content'>
-				<h2>{selectedProject.client}</h2>
-				<p>{selectedProject.shortDesc}</p>
+			<div className="details">
+				<div className="titles">
+					<h2>{selectedProject.client}</h2>
+					<h4>{selectedProject.product}</h4>
+				</div>
+
+				<div className="content">
+					{selectedProject.projectDescription?.raw.children.map((el, index) => {
+						if (el.type == "paragraph") { return <p key={index}>{el.children[0].text}</p> }
+					})}
+				</div>
+
+				<div className='tech-stack'>
+					<Icon name='github' />
+					<Icon name='github' />
+					<Icon name='github' />
+					<Icon name='github' />
+				</div>
+				<div className="background"></div>
 			</div>
 
-			<div className='tech-stack'>
-				<Icon name='github' />
-				<Icon name='github' />
-				<Icon name='github' />
-				<Icon name='github' />
-			</div>
 		</main>
 	);
 }

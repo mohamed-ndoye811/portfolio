@@ -7,6 +7,11 @@ footer {
 	display: grid;
 	place-content: center;
 
+	/* ---- Tablet ---- */
+	@include tablet {
+		height: 6rem;
+	}
+
 	@include desktop {
 		height: 100%;
 	}

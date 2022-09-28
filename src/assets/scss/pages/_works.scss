@@ -5,7 +5,7 @@ main#works {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		align-items: center;
+		align-items: left;
 		row-gap: 1rem;
 
 		.client-link {
@@ -13,10 +13,14 @@ main#works {
 			font-weight: 900;
 			letter-spacing: 0.045rem;
 			text-transform: uppercase;
-			font-variation-settings: "MIXD" 200, "wdth" 100;
+			font-variation-settings: "MIXD" 150, "wdth" 100;
 			font-feature-settings: "ss02" on, "ss01" off;
 			transition: font-variation-settings 0.3s ease;
 			user-select: none;
+
+			@include tablet {
+				font-size: 2.5rem;
+			}
 
 			/* Animation initial state */
 			opacity: 0;
@@ -24,7 +28,7 @@ main#works {
 
 			&:hover,
 			&:focus {
-				font-variation-settings: "MIXD" 200, "wdth" 125;
+				font-variation-settings: "MIXD" 200, "wdth" 150;
 			}
 		}
 	}
@@ -53,6 +57,11 @@ main#works {
 
 			/* Animation initial state */
 			clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+			img {
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 }

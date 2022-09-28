@@ -26,7 +26,7 @@ export default function Contacts() {
 					opacity: 1,
 					ease: Power4.easeOut,
 				},
-				"<"
+				"-=1"
 			);
 	}
 

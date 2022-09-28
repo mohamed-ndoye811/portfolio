@@ -9,7 +9,10 @@
 		transition: fill 0.6s ease;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus-visible {
+		cursor: pointer;
+
 		svg {
 			fill: $clr-act;
 		}
@@ -17,6 +20,10 @@
 
 	/* ---- Tablet ---- */
 	@include tablet {
-		width: 2rem;
+		width: 1.5rem;
+	}
+
+	@include desktop {
+		width: 1.5rem;
 	}
 }

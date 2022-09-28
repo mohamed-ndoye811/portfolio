@@ -56,7 +56,7 @@ export default function Menu({ display, toggle }) {
 							Contacts
 						</NavigationLink>
 					</li>
-					<li className='socials'>
+					{/* <li className='socials'>
 						{socials.map((social, index) => {
 							return (
 								<a
@@ -69,7 +69,7 @@ export default function Menu({ display, toggle }) {
 								</a>
 							);
 						})}
-					</li>
+					</li> */}
 				</ul>
 			</nav>
 		</div>

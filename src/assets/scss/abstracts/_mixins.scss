@@ -1,7 +1,8 @@
 /* ---- BREAKPOINTS ---- */
 /* Everything below tablet is phone */
 $bp-tablet: 768px;
-$bp-desktop: 1024px;
+$bp-tablet-xl: 1024px;
+$bp-desktop: 1366px;
 $bp-desktop-xl: 1440px;
 
 /* Tablet media query */
@@ -13,14 +14,14 @@ $bp-desktop-xl: 1440px;
 
 /*  Desktop media query */
 @mixin desktop {
-	@media (min-width: #{$bp-desktop} ) {
+	@media (min-width: #{$bp-desktop}) {
 		@content;
 	}
 }
 
 /* Large desktop media query */
 @mixin desktop-xl {
-	@media (min-width: #{$bp-desktop-xl} ) {
+	@media (min-width: #{$bp-desktop-xl}) {
 		@content;
 	}
 }

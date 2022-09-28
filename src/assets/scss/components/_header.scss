@@ -12,15 +12,19 @@ header {
 		display: block;
 		aspect-ratio: 1;
 		width: 2rem;
-
-		/* ---- Tablet ---- */
-		@include tablet {
-			width: 3rem;
-		}
 	}
 
 	nav {
 		display: none;
+	}
+
+	/* ---- Tablet ---- */
+	@include tablet {
+		height: 6rem;
+
+		.logo {
+			width: 4rem;
+		}
 	}
 
 	@include desktop {

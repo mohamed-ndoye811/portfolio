@@ -9,8 +9,11 @@ export default function Home() {
 		duration: 1.2,
 	});
 
+	const enterAnimationTimeline = gsap.timeline();
+	const leaveAnimationTimeline = gsap.timeline();
+
 	function enterAnimation() {
-		return gsap.fromTo(
+		return enterAnimationTimeline.fromTo(
 			".text-content section > *",
 			{
 				y: 75,
@@ -21,21 +24,43 @@ export default function Home() {
 				opacity: 1,
 				ease: Power4.easeOut,
 			}
-		);
+		).to(".logo-model > img", {
+			y: 0,
+			ease: Power4.easeOut,
+			scale: 1,
+			delay: .8,
+			duration: 2.4,
+			stagger: {
+				each: .1,
+				from: "end"
+			}
+		}, "<");
 	}
 
 	function leaveAnimation() {
-		return gsap.to(".text-content section > *", {
+		return leaveAnimationTimeline.to(".text-content section > *", {
 			y: -75,
 			opacity: 0,
 			ease: Power4.easeInOut,
-		});
+		}).to(".logo-model > img", {
+			scale: 0,
+			delay: .8,
+			duration: 1.8,
+			stagger: {
+				each: .1
+			},
+			ease: Power4.easeInOut,
+		}, "<");
 	}
 
 	usePageAnimations(enterAnimation, leaveAnimation);
 
 	return (
 		<main id='home'>
+			<div className='logo-model'>
+				<img src='src/assets/imgs/logo/m-three-d.png' alt='' />
+				<img src='src/assets/imgs/logo/n-three-d.png' alt='' />
+			</div>
 			<div className='text-content'>
 				<section>
 					<h2>WHO AM I?</h2>
